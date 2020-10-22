@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+	font-family: "Geneva", "Helvetica", "Raleway", "Arial", sans-serif;
+}
+body {
+	padding: 0px;
+	margin: 0px;
+}
+.sidebar {
+	width: 300px;
+	position: fixed;
+	background: #FFDF00;
+	border-right: 1px solid #EEE;
+	z-index: 1;
+	top: 0;
+  	left: 0;
+}
+.sidebar .sidebar-head {
+	width: 100%;
+	height: 70px;
+	padding: 18px;
+	background-color: #222;
+}
+.sidebar .sidebar-head h1 {
+	font-size: 25px;
+	padding: 0px;
+	margin: 0px;
+}
+.sidebar .sidebar-head h1 span:nth-child(1) {
+	color: #FFDF00;
+}
+.sidebar .sidebar-head h1 span:nth-child(2) {
+	color: white;
+}
+.sidebar .sidebar-menu {
+}
+.sidebar .sidebar-menu .item {
+	padding: 9px 9px 9px 18px; 
+}
+.sidebar .sidebar-menu .item > .item {
+	display: none;
+}
+.sidebar .sidebar-menu .item.active {
+	background: #FFF;
+}
+.sidebar .sidebar-menu .item.active > .item {
+	display: block;
+}
+.sidebar .sidebar-menu .item a {
+	color: #444;
+	text-decoration: none;
+	font-weight: bold;
+}
+.sidebar .sidebar-menu .item.has-sub > a {
+	margin-bottom: 9px; 
+	display: block;
+}
+.sidebar .sidebar-menu .item.has-sub .item {
+	padding-top: 9px;
+	padding-bottom: 9px; 
+}

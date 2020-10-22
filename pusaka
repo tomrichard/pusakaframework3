@@ -1,0 +1,17 @@
+<?php 
+define( 'ROOTDIRECTORY', __DIR__ );
+
+include( 'system/core/core.constants.php' 		); 	// core constants register
+include( 'system/core/core.functions.php' 		); 	// core functions
+include( 'system/core/core.console.php' 		); 	// core functions
+include( 'system/core/core.utils.php' 			);
+
+$DIR 		= ROOTDIR . '/';
+
+$dotVars 	= json_encode([
+	"path" => $DIR
+], JSON_PRETTY_PRINT);
+
+file_put_contents($DIR . '.vars', $dotVars);
+
+$app->serve($argv);

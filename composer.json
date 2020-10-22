@@ -1,0 +1,20 @@
+{
+    "name": "pusaka3/framework",
+    "description": "Pusaka Framework 3 - Fast Development",
+	"keywords": [
+        "framework",
+        "pusaka"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Richard",
+            "email": "tomrichard@xdevpusaka.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2.2"
+	}
+}
