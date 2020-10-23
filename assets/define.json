@@ -1,0 +1,5 @@
+jquery: 
+  - "vendor/jquery/jquery.js"
+
+bootstrap:
+  - "vendor/bootstrap/bootstrap.css"

@@ -23,6 +23,7 @@ if (isset($_SERVER['HTTP_ACCEPT_ENCODING'])) {
 include( ROOTDIR . 'system/http/middleware.php');
 include( ROOTDIR . 'system/http/file.php' );
 include( ROOTDIR . 'system/http/input.php' );
+include( ROOTDIR . 'system/http/url.php');
 include( ROOTDIR . 'system/http/response.php');
 include( ROOTDIR . 'system/http/request.php');
 include( ROOTDIR . 'system/http/router.php' );

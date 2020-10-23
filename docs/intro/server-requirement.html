@@ -10,11 +10,12 @@
 
   	<link rel="stylesheet" type="text/css" href="../_static/css/docs.style.css" />
 
-  	<!-- <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="_static/css/docs.mobile.style.css" /> -->
-  	<!-- <link rel="stylesheet" type="text/css" media="screen and (min-width: 600px)" href="_static/css/docs.desktop.style.css" /> -->
+  	<link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="../_static/css/docs.mobile.style.css" />
 
 </head>
 <body>
+
+	<div class="overlay"></div>
 	
 	<div class="sidebar">
 		<div class="sidebar-head">
@@ -29,7 +30,7 @@
 					<a href="index.html">Pengenalan</a>
 				</div>
 				<div class="item active">
-					<a href="">Kebutuhan Server</a>
+					<a href="#">Kebutuhan Server</a>
 				</div>
 				<div class="item">
 					<a href="credits.html">Credits</a>
@@ -110,6 +111,16 @@
 	<div class="main">
 		
 		<div class="main-head">
+			<div class="toggle">
+				<div class="menu-toggle">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg>
+				</div>
+			</div>
+			<div class="brand">
+				<h1>
+					<span>Pusaka</span> <span>Framework</span>
+				</h1>
+			</div>
 		</div>
 
 		<div class="main-content">
@@ -170,6 +181,8 @@
 		</div>
 
 	</div>
+
+	<script type="text/javascript" src="_static/scripts/sidebar.js"></script>
 
 </body>
 </html>

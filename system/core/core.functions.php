@@ -1,16 +1,22 @@
 <?php
-function config( $keys )
+function config()
 {
+
+    $args   = func_get_args();
 
 	$config = $GLOBALS['config'];
 
-	foreach ($keys as $key) {
-		if( isset($config[$key]) ) {
-			$config = $config[$key];
+    $copy   = $config;
+
+	foreach ($args as $key) {
+		
+        if( isset($copy[$key]) ) {
+			$copy = $copy[$key];
 		}
+
 	}
 
-	return $config;
+	return $copy;
 	
 }
 
@@ -55,11 +61,35 @@ function d() {
 
 }
 
-function url( $path = '' ) {
+function url( $path = NULL ) {
+    
+    $baseurl = BASEURL;
 
-	$baseurl = BASEURL;
+    if( is_string($path) ) {
+        return $baseurl . $path;
+    }
 
-	return $baseurl . $path;
+    if( $path === NULL ) {
+
+        if( !isset($GLOBALS['__Controller']) ) {
+            return;
+        }
+
+        $caller = $GLOBALS['__Controller'];
+
+        $loader = $caller->__loader();
+
+        $path   = $loader->request()->url;
+
+        $Url    = new \Pusaka\Http\Url($path);
+
+        $Url->setParams( $loader->request()->params );
+
+        return $Url;
+
+    }
+
+    return '';
 
 }
 
@@ -103,7 +133,7 @@ function redirect( $location ) {
 
 }
 
-function view($vars, $name = NULL) {
+function view($vars = [], $name = NULL) {
 
 	$caller = NULL;
 

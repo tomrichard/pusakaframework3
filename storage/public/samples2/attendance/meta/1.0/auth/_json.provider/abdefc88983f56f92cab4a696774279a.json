@@ -1,0 +1,1 @@
+{"url":"\/auth\/provider.php\/validate","desc":"Validate POST Token.","method":"POST","params":{"token":["text","0"]},"query":[],"path":[]}

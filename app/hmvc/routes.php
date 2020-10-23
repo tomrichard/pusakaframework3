@@ -2,6 +2,8 @@
 
 $router->get('/', 'welcome@index');
 
+$router->get('/blog', 'blog/home@index');
+
 // $router->get('/{id:string}', 'welcome@index');
 
 // $router->get('/{@method}/{index:number}', 'welcome');
@@ -10,6 +12,7 @@ $router->get('/', 'welcome@index');
 
 // $router->get('/alpha/{index:number}', 'welcome@alpha');
 
+$router->get('/{@method}/{build:number}', 'blog/admlogin');
 
 // $router->get('/beta/{index}', [
 

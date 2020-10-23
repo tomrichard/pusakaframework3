@@ -1,0 +1,1 @@
+{"url":"\/auth\/provider.php\/register","desc":"Register new Token.","method":"POST","params":{"username":["string","255"],"password":["string","255"]},"query":[],"path":[]}

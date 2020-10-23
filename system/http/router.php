@@ -8,6 +8,7 @@ use ReflectionMethod;
 
 class Router {
 
+	private $route_pattern;
 	private $is_callback_execute;
 	private $middlewares;
 	private $controller;
@@ -20,11 +21,12 @@ class Router {
 		
 		$this->is_callback_execute = false;
 
-		$this->next 		= true;
-		$this->pathinfo 	= $pathinfo;
-		$this->found 		= false;
-		$this->meta 		= [];
-		$this->middlewares 	= [];
+		$this->route_pattern 	= '';
+		$this->next 			= true;
+		$this->pathinfo 		= $pathinfo;
+		$this->found 			= false;
+		$this->meta 			= [];
+		$this->middlewares 		= [];
 
 	}
 
@@ -191,6 +193,8 @@ class Router {
 
 		$Request 	 	 		= new Request();
 
+		$Request->url 			= $this->route_pattern;
+
 		$Request->path   		= $this->pathfolder;
 
 		$Request->controller 	= $this->controller; 
@@ -298,6 +302,8 @@ class Router {
 		$arguments 		 = [];
 
 		$Request 	 	 		= new Request();
+
+		$Request->url 			= $this->route_pattern;
 
 		$Request->path   		= $this->pathfolder;
 
@@ -505,6 +511,8 @@ class Router {
 
 		$pathinfo = $this->pathinfo;
 
+		$ori 	  = $key;
+
 		$key 	  = preg_replace_callback('/\{@method\}|\{\w+\}|\{\w+:\w+\}/', function($match) {
 
 			if($match[0] === '{@method}') {
@@ -579,6 +587,8 @@ class Router {
 				$this->meta[$i]['value'] = $value;
 				
 			}
+
+			$this->route_pattern = $ori;
 
 			return true;
 		
@@ -695,6 +705,8 @@ class Router {
 
 			if( !is_dir( $dir = $destination . path($segment) ) ) {
 
+				$this->route_pattern .= '/' . $segments[0];
+
 				array_shift($segments);
 
 				$this->__autoSearch( $dir, $segments );
@@ -712,6 +724,8 @@ class Router {
 			 */
 			if( !file_exists( $file = $dir . $segment . '.cs.php' ) ) {
 
+				$this->route_pattern .= '/' . $segments[0];
+
 				array_shift($segments);
 
 				$this->__autoSearch( $dir, $segments );
@@ -728,6 +742,8 @@ class Router {
 			if( file_exists( $file ) ) {
 
 				//include( $file );
+
+				$this->route_pattern .= '/' . $segments[0];
 
 				array_shift($segments);
 
@@ -751,6 +767,8 @@ class Router {
 					];
 
 				}
+
+				$this->route_pattern .= '/{@method}/{@params}';
 
 				$this->handle( $handle );
 

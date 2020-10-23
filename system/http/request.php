@@ -10,6 +10,7 @@ class Request {
 	private $params;
 	private $input;
 	private $file;
+	private $url;
 
 	static function instance() {
 
@@ -26,7 +27,7 @@ class Request {
 
 	function __set( $prop, $val ) {
 
-		if( in_array($prop, ['path', 'controller']) ) {
+		if( in_array($prop, ['path', 'controller', 'url']) ) {
 			$this->{$prop} = $val;
 		}
 
@@ -34,7 +35,7 @@ class Request {
 
 	function __get( $prop ) {
 
-		if( in_array($prop, ['path', 'controller', 'input', 'file']) ) {
+		if( in_array($prop, ['path', 'controller', 'input', 'file', 'url', 'params']) ) {
 			return $this->{$prop};
 		}
 
@@ -83,7 +84,5 @@ class Request {
 	function headers() {
 
 	}
-
-
 
 }

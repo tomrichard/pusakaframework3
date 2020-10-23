@@ -7,7 +7,7 @@ $config['database']['default'] 	= [
 	'hostname' 	=> 'localhost',
 	'username'	=> 'root',
 	'password' 	=> '',
-	'database'  => '',
+	'database'  => 'pusakadb',
 	'port'		=> '3306'
 
 ];

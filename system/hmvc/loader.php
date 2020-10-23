@@ -33,4 +33,10 @@ class Loader {
 
 	}
 
+	function request() {
+		
+		return $this->request;
+
+	}
+
 }

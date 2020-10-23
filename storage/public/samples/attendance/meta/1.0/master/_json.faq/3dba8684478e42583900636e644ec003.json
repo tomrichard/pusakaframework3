@@ -1,0 +1,1 @@
+{"url":"\/master\/faq.php\/update\/{id}","desc":"Update FAQ.","method":"PUT","params":{"question":["text","0"],"answer":["text","0"]},"query":[],"path":{"id":["int","11"]}}

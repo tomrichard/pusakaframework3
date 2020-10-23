@@ -1,0 +1,1 @@
+{"url":"\/master\/faq.php\/filter?{query}","desc":"Filter and get query of FAQ.","method":"GET","params":[],"query":{"_limit":["int","5",true],"_page":["int","5",true],"_sort":["json","255",true],"question":["string","255",true],"answer":["string","255",true]},"path":[]}

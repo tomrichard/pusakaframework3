@@ -73,6 +73,8 @@ class View {
 			
 		}
 
+		$__name = strtr($this->name, ['.' => '/']);
+
 		$__ui 	= $__name . '.ui.php';
 
 		$__vui 	= path($this->request->path ?? '') . path('views') . $__ui;
